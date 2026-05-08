@@ -7,17 +7,20 @@ public class BmiCalculator{
         double weight = 0;
         double bmi;
 
-        Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("What height are you?");
-        height = input.nextDouble();
+        height = scanner.nextDouble();
 
         System.out.println("What weight are you?");
-        weight = input.nextDouble();
+        weight = scanner.nextDouble();
+
+        scanner.close();
 
         bmi = weight / (height * height); 
-
         System.out.println("BMI: " + bmi);
+
+        
 
 
         
