@@ -23,7 +23,7 @@ public class FuelTripEstimator{
         scanner.close();
 
         litresNeeded = distance / efficiency;
-        totalPrice = efficiency * price;
+        totalPrice = litresNeeded * price;
 
         System.out.print("You will need " + litresNeeded + "L and the trip will cost €" + totalPrice);
     }
