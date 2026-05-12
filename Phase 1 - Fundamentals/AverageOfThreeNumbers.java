@@ -18,6 +18,6 @@ public class AverageOfThreeNumbers{
 
         double average = ( numberOne + numberTwo + numberThree )/3;
 
-        System.out.printf("The average of the numbers you have choosen is: %.2f", average);
+        System.out.printf("The average of the numbers you have chosen is: %.2f", average);
     }
 }
