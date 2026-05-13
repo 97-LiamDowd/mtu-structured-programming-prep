@@ -20,8 +20,7 @@ public class SplitBillCalculator {
 
         tip = bill * 0.1;
         billSplit = (bill + tip)/people;
-
-        System.out.println(tip);
+        
         System.out.printf("The bill for each person is: %.2f", billSplit);
     }
 }
