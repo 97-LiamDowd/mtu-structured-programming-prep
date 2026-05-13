@@ -19,11 +19,11 @@ public class GradeCalculator {
             System.out.print(" Grade: Distiction");
         }
 
-            else if (studentMarks > 75 && studentMarks < 85) {
+            else if (studentMarks >= 75 && studentMarks < 85) {
                 System.out.print(" Grade: Merit");
             }
 
-            else if (studentMarks > 50 && studentMarks < 75) {
+            else if (studentMarks >= 50 && studentMarks < 75) {
                 System.out.print(" Grade: Pass");
             }
 
