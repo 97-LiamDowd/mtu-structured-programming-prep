@@ -11,12 +11,12 @@ public class CalculateSquare {
 
         scanner.close();
 
-        int inputSquared = CalculateSquare(userNumber);
+        int inputSquared = calculateSquare(userNumber);
 
         System.out.println("You're number squared is : " + inputSquared);
     }
 
-    public static int CalculateSquare(int userNumber){
+    public static int calculateSquare(int userNumber){
 
         int inputSquared = userNumber * userNumber;
         return inputSquared;
