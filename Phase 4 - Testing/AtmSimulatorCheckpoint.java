@@ -2,87 +2,104 @@ import java.util.Scanner;
 
 public class AtmSimulatorCheckpoint {
     public static void main(String[] args){
-        //input: storedPin, inputPin, balance, withdrawl, deposit, option 1, option 2, option 3, option 4.
-        //process: check pin, take option, update balance, repeat until option 4 selected.
-        //output: balance.
+
+        //input - stored pin, input pin, balance, withdrawal, deposit, option, scanner.
+        //process - take input pin compare to stored pin. take input for option. create each option. update balance
+        //output - balance
+
 
         int storedPin = 1234;
         int inputPin;
         double balance = 500;
-        double withdrawl;
+        double withdrawal;
         double deposit;
         int option;
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter pin:");
+        System.out.println("Enter Pin:");
         inputPin = scanner.nextInt();
 
-        if(storedPin == inputPin){
-            System.out.println("1. check balance\n2. Withdraw money\n3. Deposit money\n4. Exit");
+        if( storedPin == inputPin ){
+            
+            System.out.println("1. Balance\n2. Withdrawal\n3. Deposit\n4. Exit");
             option = scanner.nextInt();
 
-            if(option == 1 || option == 2 || option == 3 || option == 4){
+            if( option == 1 || option == 2 || option == 3 || option == 4 ){
 
-                while(option == 1){
-                    System.out.printf("Balance: %.2f%n", balance);
-                    System.out.println("1. check balance\n2. Withdraw money\n3. Deposit money\n4. Exit");
-                    option = scanner.nextInt();
-                }
+                while( option != 4 ){
 
-                while(option == 2){
+                    if( option == 1 ){
 
-                    System.out.println("Enter amount to withdraw:");
-                    withdrawl = scanner.nextDouble();
-
-                    if(withdrawl <= 0){
-                        System.out.println("Invlaid withdrawl amount");
-                    }
-
-                    else if(withdrawl > balance){
-                        System.out.println("Insufficent funds");
-                    }
-
-                    else{
-                        balance = balance - withdrawl;
-                        System.out.println("1. check balance\n2. Withdraw money\n3. Deposit money\n4. Exit");
+                        System.out.printf("Balance: %.2f%n", balance);
+                        System.out.println("1. Balance\n2. Withdrawal\n3. Deposit\n4. Exit");
                         option = scanner.nextInt();
+
+                    }
+
+                    else if( option == 2 ){
+
+                        System.out.println("Withdrawal amount:");
+                        withdrawal = scanner.nextDouble();
+
+                        if( withdrawal > balance ){
+
+                            System.out.println("Insufficent funds");
+
+                        }
+
+                        else if( withdrawal <= 0 ){
+
+                            System.out.println("Invalid input");
+
+                        }
+
+                        else{
+                            
+                            balance = balance - withdrawal;
+                            System.out.println("1. Balance\n2. Withdrawal\n3. Deposit\n4. Exit");
+                            option = scanner.nextInt();  
+                        
+                        }
+                        
+                    }
+
+                    else if( option == 3 ){
+
+                        System.out.println("Deposit amount:");
+                        deposit = scanner.nextDouble();
+
+                        if( deposit <= 0){
+
+                            System.out.println("Invalid input");
+
+                        }
+
+                        else{
+
+                            balance = balance + deposit;
+                            System.out.println("1. Balance\n2. Withdrawal\n3. Deposit\n4. Exit");
+                            option = scanner.nextInt();
+
+                        }
+
                     }
 
                 }
 
-                while(option == 3){
-
-                    System.out.println("Enter amount to deposit");
-                    deposit = scanner.nextDouble();
-
-                    if(deposit <= 0){
-                        System.out.println("Invalid deposit amount");
-                    }
-
-                    else{
-                        balance = balance + deposit;
-                        System.out.println("1. check balance\n2. Withdraw money\n3. Deposit money\n4. Exit");
-                        option = scanner.nextInt();
-                    }
-
-                }
-
-                while(option == 4){
-                    System.out.println("Thank you for using the ATM.");
-                    break;
-                }
-                
-                
             }
 
             else{
-                System.out.println("Invalid menu option.");
+
+                System.out.println("Invalid menu option");
+
             }
 
         }
 
         else{
-            System.out.println("Incorrect pin.");
+
+            System.out.println("Incorrect Pin");
+        
         }
 
         scanner.close();
