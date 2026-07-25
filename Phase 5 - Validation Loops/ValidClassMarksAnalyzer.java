@@ -18,6 +18,8 @@ public class ValidClassMarksAnalyzer {
 
         System.out.printf("Average marks: %.2f%nHighest marks: %.2f%nLowest marks: %.2f%n", average, highestMark, lowestMark);
         System.out.println("Passes: " + countPasses + "\nFails: " + countFails + "\nClass results: " + result);
+
+        scanner.close();
     }
 
     public static double getValidMarks(Scanner scanner, int studentNumber) {
