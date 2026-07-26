@@ -5,7 +5,9 @@ public class PasswordValidationPractice {
         Scanner scanner = new Scanner(System.in);
         String validPassword = getValidPassword(scanner);
 
-        System.out.println("Password: " + validPassword);
+        System.out.println("Password accepted");
+
+        scanner.close();
     }
 
     public static String getValidPassword(Scanner scanner) {
