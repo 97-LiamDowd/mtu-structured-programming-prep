@@ -7,8 +7,6 @@ public class ArrayListMarkPractice {
         ArrayList<Double> marks = new ArrayList<>();
         double total = 0;
         double average = 0;
-        double highestMarks = marks.get(0);
-        double lowestMarks = marks.get(0);
 
         System.out.println("Enter five grades:");
 
@@ -17,10 +15,14 @@ public class ArrayListMarkPractice {
             marks.add(mark);
         }
 
+        double highestMarks = marks.get(0);
+        double lowestMarks = marks.get(0);
+
         for (int i = 0; i < marks.size(); i++) {
             total = total + marks.get(i);
-            average = total / marks.size();
         }
+
+        average = total / marks.size();
 
         for (int i = 0; i < marks.size(); i++) {
 
