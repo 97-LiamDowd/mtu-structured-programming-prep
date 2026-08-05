@@ -27,8 +27,8 @@ public class StudentResultsManager {
                     printSearchResult(students, marks, searchStudent);
                     break;
 
-
                 case 4:
+                    System.out.println("Thank you for using this system.");
                     break;
 
                 default:
@@ -40,7 +40,6 @@ public class StudentResultsManager {
             
         } while (option != 4);
 
-        
     }
 
     public static void printMenu() {
@@ -172,6 +171,5 @@ public class StudentResultsManager {
         if(!nameFound) {
             System.out.println(searchStudent + " was not found.");
         }
-
     }
 }
