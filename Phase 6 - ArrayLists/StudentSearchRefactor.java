@@ -15,7 +15,9 @@ public class StudentSearchRefactor {
         String searchName = getValidSearchName(scanner); 
 
         if (findStudentName(students, searchName) == true) {
-            System.out.println("Student: " + searchName);
+            System.out.println("Student: " + students.get(findStudentIndex(students, searchName)));
+            System.out.printf("Mark: %.2f%n", marks.get(findStudentIndex(students, searchName)));
+            System.out.println("Result ");
         }
 
         scanner.close();
@@ -98,5 +100,18 @@ public class StudentSearchRefactor {
         }
 
         return nameFound;
+    }
+
+    public static int findStudentIndex(ArrayList<String> students, String searchName) {
+        int findIndex = 0;
+
+        for (int i = 0; i < students.size(); i++) {
+            if (students.get(i).equals(searchName)) {
+                findIndex = i;
+                break;
+            }
+        }
+
+        return findIndex;
     }
 }
