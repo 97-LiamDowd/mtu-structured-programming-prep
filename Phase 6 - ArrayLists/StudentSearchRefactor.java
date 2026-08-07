@@ -17,7 +17,14 @@ public class StudentSearchRefactor {
         if (findStudentName(students, searchName) == true) {
             System.out.println("Student: " + students.get(findStudentIndex(students, searchName)));
             System.out.printf("Mark: %.2f%n", marks.get(findStudentIndex(students, searchName)));
-            System.out.println("Result ");
+            if (marks.get(findStudentIndex(students, searchName)) >= 40){
+                System.out.println("Result: pass");
+            }
+
+            else if (marks.get(findStudentIndex(students, searchName)) < 40){
+                System.out.println("Result: fail");
+            }
+            
         }
 
         scanner.close();
